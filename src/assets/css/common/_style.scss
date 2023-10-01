@@ -1,0 +1,190 @@
+html {
+  font-size: 10px;
+}
+
+body {
+  margin: 0;
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 500;
+  background-color: #fff;
+  color: #303669;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+:root {
+  --border-radius: 0.6rem;
+  --bg-black: #000;
+  --bg-white: #fff;
+  --border-gray: #e5e6e1;
+  --boxshadow-gray: rgba(10, 10, 10, 0.02);
+  --progect-color: #303669;
+  --progect-color-gray: #7c7c7c;
+  --progect-color-gray-light: #f4f4f4;
+  --progect-color-gray-light-two: #e3e3e3;
+  --progect-color-white: #fff;
+  --progect-color-green: #00d1b2;
+  --progect-color-green-two: rgb(0, 255, 21);
+  --progect-color-red: rgb(249, 1, 1);
+}
+
+.notlink {
+  user-select: none;
+  pointer-events: none;
+}
+.section {
+  padding: 3rem 1.5rem;
+  width: 100%;
+}
+.container {
+  max-width: 36rem;
+  padding: 0 1.5rem;
+  margin: 0 auto;
+  width: 100%;
+}
+.panel {
+  border-radius: var(--border-radius);
+  background-color: var(--bg-white);
+  box-shadow:
+    0 0.5em 1em -0.125em var(--boxshadow-gray),
+    0 0 0 0.1rem var(--boxshadow-gray);
+  font-size: 1rem;
+  &__title {
+    background-color: var(--progect-color-green);
+    color: var(--progect-color-white);
+    align-items: center;
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.75em 1em;
+  }
+}
+.text {
+  font-size: 1.4rem;
+  line-height: 1.6rem;
+}
+
+img {
+  max-width: 100%;
+  border: 0;
+}
+
+a {
+  color: var(--progect-color-white);
+  outline: none;
+  transition: 0.3s;
+  text-decoration: none;
+
+  &:active,
+  &:hover,
+  &:focus {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+ul {
+  list-style: none;
+}
+
+ul,
+li {
+  padding: 0;
+  margin: 0;
+}
+
+h1 {
+  margin: 0;
+  font-size: 1.6rem;
+  line-height: 1.8rem;
+}
+
+h2 {
+  margin: 0;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  color: inherit;
+}
+
+::placeholder {
+  color: inherit;
+}
+:-ms-input-placeholder {
+  color: inherit;
+}
+
+.button {
+  width: inherit;
+  padding: 0;
+  border: 0;
+  cursor: pointer;
+  font-size: 1.3rem;
+  line-height: 1.6rem;
+  &_1,
+  &_1:hover,
+  &_1:focus {
+    border-radius: var(--border-radius);
+    padding: 1rem;
+    background: var(--progect-color-green-two);
+    box-shadow: 0 0.4rem 2.4rem var(--progect-color-green);
+    letter-spacing: 0.05em;
+    color: var(--progect-color);
+  }
+
+  &_2,
+  &_2:hover,
+  &_2:focus {
+    border-radius: var(--border-radius);
+    padding: 1rem;
+    background: var(--bg-white);
+    box-shadow:
+      0 0.5rem 1rem -0.125rem var(--boxshadow-gray),
+      0 0 0 0.1rem var(--boxshadow-gray);
+    letter-spacing: 0.05rem;
+    color: var(--progect-color-red);
+  }
+  &_3,
+  &_3:hover,
+  &_3:focus {
+    border-radius: var(--border-radius);
+    padding: 1rem;
+    background: var(--bg-white);
+    box-shadow:
+      0 0.5rem 1rem -0.125rem var(--boxshadow-gray),
+      0 0 0 0.1rem var(--boxshadow-gray);
+    letter-spacing: 0.05rem;
+    color: var(--progect-color);
+  }
+
+  &_link {
+    display: flex;
+    padding: 0 1rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+}

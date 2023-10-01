@@ -1,0 +1,24 @@
+.s-form-popup {
+  .a-popup {
+    &__container {
+      padding: 4rem;
+      border-radius: var(--border-radius);
+    }
+  }
+  &__form {
+    min-width: 400px;
+  }
+  &__title {
+    margin-bottom: 2.4rem;
+    font-size: 1.8rem;
+    font-weight: 600;
+    line-height: 2.4rem;
+  }
+  &__btns {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__button {
+    margin-top: 10px;
+  }
+}
