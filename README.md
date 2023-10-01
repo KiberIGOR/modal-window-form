@@ -16,7 +16,7 @@ npm run dev
 ## Функционал:
 > В произвольной верстке, на VUE3, реализована модальное окно, состоящее из полей, используя БЭМ нейминг:
 >
->![This is an alt text.]( ./src/assets/img/readMe/form.png"/")
+>![This is an alt text.]( ./src/assets/img/readMe/form.png "/")
 >
 >> * Имя (обязательное поле, максимум 100 символов)
 >> * Фамилия(максимум 100 символов)
@@ -24,13 +24,13 @@ npm run dev
 >> * Сообщение(максимум 500 символов).
 >> * Телефон - только российские номера
 >> * Подключена валидация полей.
->>![This is an alt text.]( ./src/assets/img/readMe/form.png"/")
+>>![This is an alt text.]( ./src/assets/img/readMe/form.png "/")
 
 >###### Произвольная верстка:
->![This is an alt text.](./src/assets/img/readMe/verstka.png"/edit")
+>![This is an alt text.](./src/assets/img/readMe/verstka.png "/edit")
 >
 >###### После отправки формы:
->![This is an alt text.](./src/assets/img/readMe/send.png"/edit")
+>![This is an alt text.](./src/assets/img/readMe/send.png "/edit")
 >
 >> Снизу кнопки появляется объект отправки данных.
 
