@@ -1,0 +1,41 @@
+@media (min-width: 576px) {
+}
+@media (min-width: 767px) {
+  .container {
+    max-width: 86rem;
+    padding: 0 1.5rem;
+  }
+  h1 {
+    font-size: 1.8rem;
+    line-height: 2rem;
+  }
+  .button {
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+  }
+  .section {
+    padding: 3rem 3rem;
+  }
+  .text {
+    font-size: 1.6rem;
+    line-height: 1.8rem;
+  }
+}
+@media (min-width: 1200px) {
+  h1 {
+    font-size: 2rem;
+    line-height: 2.2rem;
+  }
+  .button {
+    font-size: 1.6rem;
+    line-height: 1.8rem;
+  }
+  .container {
+    max-width: 120rem;
+    padding: 0 3rem;
+  }
+  .text {
+    font-size: 1.8rem;
+    line-height: 2rem;
+  }
+}
