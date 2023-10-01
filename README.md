@@ -24,7 +24,7 @@ npm run dev
 >> * Сообщение(максимум 500 символов).
 >> * Телефон - только российские номера
 >> * Подключена валидация полей.
->>![This is an alt text.]( ./src/assets/img/readMe/form.png "/")
+>>![This is an alt text.]( ./src/assets/img/readMe/invalidForm.png "/")
 
 >###### Произвольная верстка:
 >![This is an alt text.](./src/assets/img/readMe/verstka.png "/edit")
