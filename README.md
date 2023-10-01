@@ -1,6 +1,6 @@
 # temperature sensor
 
-P.S. This repository contains the temp-sensor project developed by Igor Kobozev.
+P.S. This repository contains the modal-window-form project developed by Igor Kobozev.
 
 ###### Tech: Vue 3 + TypeScript + Vite
 
