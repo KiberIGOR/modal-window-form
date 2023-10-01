@@ -1,4 +1,4 @@
-# temperature sensor
+# Modal Window Form
 
 P.S. This repository contains the modal-window-form project developed by Igor Kobozev.
 
