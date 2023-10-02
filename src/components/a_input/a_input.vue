@@ -70,6 +70,8 @@ const computedValue = computed({
       :maxlength="maxLength"
       :required="required ?? false"
     />
-    <p class="a-input__error" v-if="(isError??false) && textError">{{textError}}</p>
+    <p class="a-input__error" v-if="(isError ?? false) && textError">
+      {{ textError }}
+    </p>
   </div>
 </template>
