@@ -9,7 +9,7 @@ import "./s_form_popup.scss";
 defineProps<{ visible: Boolean }>();
 const emit = defineEmits(["close-popup", "sendData"]);
 
-const fields = ref<Fields>(inputFields)
+const fields = ref<Fields>(inputFields);
 
 function handleSubmit() {
   if (isValid()) {
@@ -18,7 +18,7 @@ function handleSubmit() {
     emit("close-popup");
   }
 }
-function isValid():Boolean {
+function isValid(): Boolean {
   let isAllValid = true;
   for (let field of Object.values(fields.value)) {
     let isFieldValid = true;
@@ -32,10 +32,10 @@ function isValid():Boolean {
     }
     if (isFieldValid) {
       field.isValid = true;
-      field.errorText = '';
+      field.errorText = "";
     }
   }
-  return isAllValid
+  return isAllValid;
 }
 function clearData() {
   for (let field of Object.values(fields.value)) {

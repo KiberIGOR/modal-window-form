@@ -4,17 +4,17 @@ export interface Fields {
 }
 /** Объект инпута */
 export interface Field {
-	/** placeholder/label */
+  /** placeholder/label */
   label: string;
-	/** Значение инпута */
+  /** Значение инпута */
   value: string;
-	/** Атрибуты, передаваемые инпуту(v-bind) */
+  /** Атрибуты, передаваемые инпуту(v-bind) */
   bind: FieldBind;
-	/** Отвечает за показ ошибки */
+  /** Отвечает за показ ошибки */
   isValid: boolean;
-	/** Текст ошибки */
+  /** Текст ошибки */
   errorText: string;
-	/** функции проверки + тексты ошики */
+  /** функции проверки + тексты ошики */
   errors: FieldErrors;
 }
 /** Типы инпута */
@@ -25,27 +25,27 @@ export const enum FieldTypes {
 }
 /** Необязательные поля инпута */
 export interface FieldBind {
-	/** Максимальное число симвогов */
+  /** Максимальное число симвогов */
   maxLength?: number;
-	/** Встреный required винпут */
+  /** Встреный required винпут */
   required?: boolean;
-	/** Тип инпута */
+  /** Тип инпута */
   type?: FieldTypes;
 }
 
- /** Объект с функциями валидаций и текстом ошибки */
+/** Объект с функциями валидаций и текстом ошибки */
 export interface FieldErrors {
   [key: string]: {
-		/** Функция проверки на валидность.
-   * @function (input.value:string):boolean=>{return true(isValid)}*/
-		checkFunc:(value: string) => boolean,
-		/** Текст для не валидного инпута */ 
-		text:string
-	};
+    /** Функция проверки на валидность(каким должен быть инпут).
+     * @function (input.value:string):boolean=>{return true(isValid)}*/
+    checkFunc: (value: string) => boolean;
+    /** Текст для не валидного инпута */
+    text: string;
+  };
 }
 
 /** Объект с объектами для инпута */
-export const inputFields:Fields = {
+export const inputFields: Fields = {
   name: {
     label: "Имя",
     value: "",
@@ -55,14 +55,20 @@ export const inputFields:Fields = {
       type: FieldTypes.input,
     },
     isValid: true,
-    errorText: '',
+    errorText: "",
     errors: {
-      require: {
-        checkFunc:function (value: string) {
-        return Boolean(value.length);
+      maxLength: {
+        checkFunc: function (value: string) {
+          return value.length <= 100;
         },
-        text: 'Поле не заполнено',
-      }
+        text: "Имя слишком длинное",
+      },
+      require: {
+        checkFunc: function (value: string) {
+          return Boolean(value.length);
+        },
+        text: "Поле не заполнено",
+      },
     },
   },
   sername: {
@@ -73,8 +79,15 @@ export const inputFields:Fields = {
       type: FieldTypes.input,
     },
     isValid: true,
-    errorText: '',
-    errors: {},
+    errorText: "",
+    errors: {
+      maxLength: {
+        checkFunc: function (value: string) {
+          return value.length <= 100;
+        },
+        text: "Имя слишком длинное",
+      },
+    },
   },
   number: {
     label: "Номер телефона",
@@ -85,20 +98,21 @@ export const inputFields:Fields = {
       maxLength: 16,
     },
     isValid: true,
-    errorText: '',
+    errorText: "",
     errors: {
       valid: {
         checkFunc: function (value: string) {
-        const regExp = /^(?:\+7|8)\d{10}$/;
-        return regExp.test(value.replace(/[ ()-]/g, ""));},
-       text: 'Неверно набран номер',
-    },
-		require: {
-			checkFunc: function (value: string) {
-			return Boolean(value.length);
-			},
-			text: 'Поле не заполнено',
-		},
+          const regExp = /^(?:\+7|8)\d{10}$/;
+          return regExp.test(value.replace(/[ ()-]/g, ""));
+        },
+        text: "Неверно набран номер",
+      },
+      require: {
+        checkFunc: function (value: string) {
+          return Boolean(value.length);
+        },
+        text: "Поле не заполнено",
+      },
     },
   },
   mail: {
@@ -109,21 +123,22 @@ export const inputFields:Fields = {
       type: FieldTypes.input,
     },
     isValid: true,
-    errorText: '',
+    errorText: "",
     errors: {
-      valid:{ checkFunc:function (value: string) {
-        const regExp =
-          /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
-        return regExp.test(value);
-      }, 
-      text: 'Неверно набрана почта',
-    },
-		require: {
-			checkFunc: function (value: string) {
-			return Boolean(value.length);
-			},
-			text: 'Поле не заполнено',
-		},
+      valid: {
+        checkFunc: function (value: string) {
+          const regExp =
+            /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+          return regExp.test(value);
+        },
+        text: "Неверно набрана почта",
+      },
+      require: {
+        checkFunc: function (value: string) {
+          return Boolean(value.length);
+        },
+        text: "Поле не заполнено",
+      },
     },
   },
   message: {
@@ -134,7 +149,14 @@ export const inputFields:Fields = {
       maxLength: 500,
     },
     isValid: true,
-    errorText: '',
-    errors: {},
+    errorText: "",
+    errors: {
+      maxLength: {
+        checkFunc: function (value: string) {
+          return value.length <= 500;
+        },
+        text: "Имя слишком длинное",
+      },
+    },
   },
 };
